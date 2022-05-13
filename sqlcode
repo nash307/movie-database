@@ -1,0 +1,36 @@
+create table movie(
+movie_id int(10),
+actor_name char(10),
+actress_name char(10),
+movrelease year(10),
+primary key(movie_id));
+
+create table actor(
+actorid int(10),
+actor_name char(10),
+movie_id int(10),
+primary key(actorid),
+foreign key(movie_id) references movie(movie_id));
+
+create table actress(
+actressid int(10),
+actress_name char(10),
+movie_id int(10),
+primary key(actressid),
+foreign key(movie_id) references movie(movie_id));
+
+insert into movie values(11,'vijay','pooja',2001);
+insert into movie values(22,'yash','srinidhi',2001);
+insert into movie values(33,'maheshbabu','keerthi',2003);
+select *from movie;
+
+insert into actor values(178,'vijay',11);
+insert into actor values(189,'yash',22);
+insert into actor values(176,'maheshbabu',33);
+select *from actor;
+
+insert into actress values(123,'pooja',11);
+insert into actress values(134,'srinidhi',22);
+insert into actress values(156,'keerthi',33);
+select *from actress;
+
